@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from fastapi import FastAPI , HTTPException
-from fastapi.middlewares.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from scipy.sparse import csr_matrix
 from sklearn.preprocessing import MinMaxScaler
 from pydantic import BaseModel
