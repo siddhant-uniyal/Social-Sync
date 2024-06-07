@@ -1,11 +1,19 @@
 import pandas as pd
 import numpy as np
 from fastapi import FastAPI , HTTPException
+from fastapi.middlewares.cors import CORSMiddleware
 from scipy.sparse import csr_matrix
 from sklearn.preprocessing import MinMaxScaler
 from pydantic import BaseModel
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 df = pd.DataFrame(columns = ['userId'])
 df.set_index('userId' , inplace = True)
